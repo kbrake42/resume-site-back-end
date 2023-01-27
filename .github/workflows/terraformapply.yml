@@ -18,6 +18,10 @@ jobs:
         with:
           path: ./
           auto_approve: true
-          var_file: |
-            ./terraform.tfvars
+          variables: |
+            domain_name = "test.kenbrake.com"
+            bucket_name = "test.kenbrake.com"
+            common_tags = {
+              Project = "test.kenbrake.com"
+            }
           
