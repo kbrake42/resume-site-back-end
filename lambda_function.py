@@ -15,7 +15,7 @@ def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
 
     # select the table
-    table = dynamodb.Table("resume-site-table")
+    table = dynamodb.Table("site_visitor_counter")
 
     # get item from database
     items = json.dumps(table.get_item(Key={"visitors": 'resume'}))
@@ -31,7 +31,7 @@ def lambda_handler(event, context):
         ExpressionAttributeValues={':c':incrementedCount},
         ReturnValues="UPDATED_NEW"
         )
-
+    
     return {
         "statusCode": 200,
         "headers": {
