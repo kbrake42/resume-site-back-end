@@ -18,4 +18,6 @@ jobs:
         with:
           path: ./
           auto_approve: true
+          var_file: |
+            terraform.tfvars
           
