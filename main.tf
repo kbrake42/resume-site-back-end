@@ -29,7 +29,6 @@ module "lambda_counter" {
 
 }
 
-
 module "api_gateway" {
   source = "./modules/api_gateway"
 
@@ -37,10 +36,6 @@ module "api_gateway" {
   permissions_function_name = module.lambda_counter.function_name
 
 }
-
-
-
-
 
 
 resource "aws_s3_bucket_cors_configuration" "example" {
