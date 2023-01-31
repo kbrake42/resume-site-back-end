@@ -1,15 +1,16 @@
 import json
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
+from functions import getCount
 
 #always start with the lambda_handler
 def lambda_handler(event, context):
 
     #Get the count from the database item
-    def getCount(dbItem):
-        json_tree = json.loads(dbItem)
-        item = json_tree['Item']
-        return (item['count'])
+    #def getCount(dbItem):
+    #    json_tree = json.loads(dbItem)
+    #    item = json_tree['Item']
+    #    return (item['count'])
 
     # make the connection to dynamodb
     dynamodb = boto3.resource('dynamodb')

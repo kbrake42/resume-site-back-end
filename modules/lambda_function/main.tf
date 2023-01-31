@@ -11,7 +11,7 @@ resource "aws_lambda_function" "function" {
 }
 
 data "archive_file" "lambda_zip" {
-  type        = var.type
-  source_file = var.source_file
+  type = var.type
+  source_dir  = var.source_dir
   output_path = var.output_path
 }

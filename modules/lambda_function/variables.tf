@@ -28,10 +28,9 @@ variable "type" {
   description = "Type of archive file"
 }
 
-variable "source_file" {
-
+variable "source_dir" {
   type        = string
-  description = "Source file for lambda archive"
+  description = "Source directory for lambda archive"
 }
 
 variable "output_path" {

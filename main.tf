@@ -1,7 +1,7 @@
 # Provider Block
 provider "aws" {
   #profile = "sb" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
 module "visitor_count_table" {
@@ -23,8 +23,8 @@ module "lambda_counter" {
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.9"
 
-  type        = "zip"
-  source_file = "./lambda_function.py"
+  type = "zip"
+  source_dir  = "./app"
   output_path = "./lambda_function.zip"
 
 }
