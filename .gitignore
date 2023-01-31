@@ -1,4 +1,4 @@
 .terraform/
 terraform.tfvars
 /remote-state-backend/.terraform
-
+lambda_function.zip
