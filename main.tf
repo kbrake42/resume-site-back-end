@@ -1,6 +1,6 @@
 # Provider Block
 provider "aws" {
-  # profile = "sb" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
+  profile = "sb" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
   region  = "us-east-1"
 }
 
