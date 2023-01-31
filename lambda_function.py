@@ -5,13 +5,13 @@ from boto3.dynamodb.conditions import Key, Attr
 #always start with the lambda_handler
 def lambda_handler(event, context):
 
-    #Get the count from the database item==Testing update
+    #Get the count from the database item
     def getCount(dbItem):
         json_tree = json.loads(dbItem)
         item = json_tree['Item']
         return (item['count'])
 
-    # make the connection to dynamodb -- new text
+    # make the connection to dynamodb
     dynamodb = boto3.resource('dynamodb')
 
     # select the table
