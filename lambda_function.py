@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         item = json_tree['Item']
         return (item['count'])
 
-    # make the connection to dynamodb
+    # make the connection to dynamodb ---
     dynamodb = boto3.resource('dynamodb')
 
     # select the table
