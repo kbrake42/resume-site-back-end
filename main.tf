@@ -23,7 +23,7 @@ module "lambda_counter" {
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.9"
 
-  type = "zip"
+  type        = "zip"
   source_dir  = "./app"
   output_path = "./lambda_function.zip"
 
@@ -36,6 +36,14 @@ module "api_gateway" {
   permissions_function_name = module.lambda_counter.function_name
 
 }
+
+
+
+resource "aws_route53_zone" "api_zone" {
+  name = "api.test.kenbrake.com"
+}
+
+
 
 
 resource "aws_s3_bucket_cors_configuration" "example" {

@@ -3,12 +3,12 @@ resource "aws_dynamodb_table" "table" {
 
   name           = "site_visitor_counter"
   billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
-  hash_key       = "visitors"
+  read_capacity  = 1
+  write_capacity = 1
+  hash_key       = "site"
 
   attribute {
-    name = "visitors"
+    name = "site"
     type = "S"
   }
 
@@ -24,7 +24,7 @@ resource "aws_dynamodb_table_item" "setup" {
 
   item = <<ITEM
 {
-  "visitors": {"S": "resume"},
+  "site": {"S": "resume"},
   "count": {"S": "0"}
 }
 ITEM
