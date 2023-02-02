@@ -19,14 +19,14 @@ def lambda_handler(event, context):
     table = dynamodb.Table("site_visitor_counter")
 
     # get item from database
-    items = json.dumps(table.get_item(Key={"visitors": 'resume'}))
+    items = json.dumps(table.get_item(Key={"site": 'resume'}))
     
     count = getCount(items)
     incrementedCount = str(int(count) + 1)
     print("IncrementedCount= " + incrementedCount)
     
     response = table.update_item(
-        Key={'visitors': "resume"},
+        Key={'site': "resume"},
         UpdateExpression="SET #count = :c",
         ExpressionAttributeNames= {'#count':'count'},
         ExpressionAttributeValues={':c':incrementedCount},
