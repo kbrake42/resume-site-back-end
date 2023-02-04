@@ -7,6 +7,8 @@ provider "aws" {
 module "visitor_count_table" {
   source = "./modules/dynamodb"
 
+  table_name = "visitor-counter"
+
 }
 
 module "iam_for_lambda" {
