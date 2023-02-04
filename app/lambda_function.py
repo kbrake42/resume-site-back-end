@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
 
     # select the table
-    table = dynamodb.Table("site_visitor_counter")
+    table = dynamodb.Table("visitor_counter")
 
     # get item from database
     items = json.dumps(table.get_item(Key={"site": 'resume'}))
