@@ -26,19 +26,20 @@ EOF
         {
           "Effect" : "Allow",
           "Action" : [
-            "dynamodb:DescribeStream",
-            "dynamodb:GetRecords",
-            "dynamodb:GetShardIterator",
-            "dynamodb:ListStreams",
-            "dynamodb:Scan",
             "dynamodb:GetItem",
-            "dynamodb:UpdateItem",
-            "logs:CreateLogGroup",
+            "dynamodb:UpdateItem"
+          ],
+          "Resource" : "${var.dynamodb_arn}"
+        },
+        {
+          "Effect" : "Allow",
+          "Action" : [
             "logs:CreateLogStream",
+            "logs:CreateLogGroup",
             "logs:PutLogEvents"
           ],
           "Resource" : "*"
-        },
+        }
       ]
     })
   }
