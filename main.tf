@@ -1,6 +1,5 @@
 # Provider Block
 provider "aws" {
-  #profile = "sb" # AWS Credentials Profile configured on your local desktop terminal  $HOME/.aws/credentials
   region = var.region
 }
 
@@ -26,10 +25,9 @@ module "lambda_counter" {
   role          = module.iam_for_lambda.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.9"
-
-  type        = "zip"
-  source_dir  = "./app"
-  output_path = "./lambda_function.zip"
+  type          = "zip"
+  source_dir    = "./app"
+  output_path   = "./lambda_function.zip"
 
 }
 
@@ -40,8 +38,6 @@ module "api_gateway" {
   permissions_function_name = module.lambda_counter.function_name
 
 }
-
-
 
 resource "aws_route53_zone" "api_zone" {
   name = "api.test.kenbrake.com"
